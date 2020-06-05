@@ -4,15 +4,22 @@
     <HeadComp></HeadComp>
     <TextareaComp></TextareaComp>
     <StringComp></StringComp>
+    <button v-on:click="buttonAction">{{ button }}</button>
   </div>
 </template>
 
 <script>
-import HeadComp from "@/components/modules/HeadComp"
-import TextareaComp from "@/components/modules/TextareaComp"
-import StringComp from "@/components/modules/StringComp"
+import HeadComp from "@/components/modules/HeadComp";
+import TextareaComp from "@/components/modules/TextareaComp";
+import StringComp from "@/components/modules/StringComp";
 export default {
   name: "form",
+  data() {
+    return {
+      button: "確認"
+    };
+  },
+  methods: mapActions("Form", "buttonAction: buttonAction"),
   props: {
     msg: String
   },
