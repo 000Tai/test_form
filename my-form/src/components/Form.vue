@@ -2,18 +2,24 @@
   <div>
     Formページ
     <HeadComp></HeadComp>
+    <TextareaComp></TextareaComp>
+    <StringComp></StringComp>
   </div>
 </template>
 
 <script>
 import HeadComp from "@/components/modules/HeadComp"
+import TextareaComp from "@/components/modules/TextareaComp"
+import StringComp from "@/components/modules/StringComp"
 export default {
   name: "form",
   props: {
     msg: String
   },
   components: {
-    HeadComp
+    HeadComp,
+    TextareaComp,
+    StringComp
   }
 };
 </script>
