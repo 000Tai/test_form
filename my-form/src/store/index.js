@@ -38,16 +38,27 @@ const Head = {
 
 export default new Vuex.Store({
   state: {
-    stepCount: 0
+    stepCount: 0,
+    impression: "",
+    errorFlag: false //trueなら通過
   },
   mutations: {
     setStepCount(state) {
       console.log("rootsetStepCount");
       state.stepCount++;
+    },
+    updateImpression(state, value) {
+      state.impression = value;
+      if (state.impression) {
+        state.errorFlag = true;
+      } else {
+        state.errorFlag = false;
+      }
     }
   },
   modules: {
     Form,
-    Head
+    Head,
+    Textarea
   }
 });
